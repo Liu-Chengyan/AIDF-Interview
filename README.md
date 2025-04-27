@@ -1,4 +1,4 @@
-# Second Part: Simple Data Pipeline Automation
+# Part 2: Simple Data Pipeline Automation
 
 # Files Overview
 
