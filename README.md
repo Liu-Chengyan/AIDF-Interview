@@ -16,7 +16,7 @@
 - **Generation and Results**:
   - The generated Python code was executed directly within the notebook, successfully producing a histogram showing the distribution of news articles among Apple, Microsoft, and Google.
   - The chart clearly illustrates the relative number of earnings-related articles for each company.
-![Histogram](histogram_per_company.png)
+![Histogram](Graphs/histogram_per_company.png)
 ---
 
 ## 3. Second Visualization - Streamlit Dashboard
@@ -33,5 +33,5 @@
   - **Left Panel**: A company selector allowing users to choose among Apple, Microsoft, and Google.
   - **Right Panel**: A dynamic line chart showing the number of news articles per day for the selected company.
   - The line chart automatically updates based on the selected company, reflecting the news volume trends over time.
-![Dashboard](dashboard_screenshot.png)
+![Dashboard](Graphs/dashboard_screenshot.png)
 ---
