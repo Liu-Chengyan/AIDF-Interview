@@ -1,0 +1,41 @@
+import json
+from transformers import pipeline
+
+# Load the dataset
+with open('company.json', 'r') as file:
+    data = json.load(file)
+
+# Set up the sentiment analysis pipeline
+sentiment_analyzer = pipeline("sentiment-analysis")
+
+# Prepare the markdown table
+markdown_table = "Company | Sentiment | Summary\n--- | --- | ---\n"
+
+# Set up the paraphrasing model
+paraphraser = pipeline("text2text-generation", model="t5-base")
+
+for article in data:
+    company = article['company']
+    title = article['title']
+    
+    # Sentiment analysis
+    sentiment_result = sentiment_analyzer(title)
+    sentiment_label = sentiment_result[0]['label']
+    if sentiment_label == 'LABEL_0':
+        sentiment = 'Negative'
+    elif sentiment_label == 'LABEL_1':
+        sentiment = 'Neutral'
+    else:
+        sentiment = 'Positive'  # Assuming LABEL_2 is 'Positive'
+    
+    # Paraphrasing the title
+    paraphrased_title = paraphraser(f"paraphrase: {title}", max_length=50)[0]['generated_text']
+    
+    # Append to the markdown table
+    markdown_table += f"{company} | {sentiment} | {paraphrased_title}\n"
+
+# Print the final markdown table
+print(markdown_table)
+
+
+This code snippet analyzes sentiments and paraphrases titles from a list of news articles stored in a JSON file named `company.json`. It then organizes the results in a Markdown-formatted table with columns representing the company name, the sentiment of the title, and a paraphrased summary of the title. The sentiment analysis uses a transformer model, and for paraphrasing, the T5 model is deployed. This setup helps to present the distilled insights from each news article in a clear, structured manner, encapsulating both the emotional tone and the contextual translation of the titles.
