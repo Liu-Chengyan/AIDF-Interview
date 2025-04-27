@@ -33,5 +33,5 @@
   - **Left Panel**: A company selector allowing users to choose among Apple, Microsoft, and Google.
   - **Right Panel**: A dynamic line chart showing the number of news articles per day for the selected company.
   - The line chart automatically updates based on the selected company, reflecting the news volume trends over time.
-
+![Dashboard](dashboard_screenshot.png)
 ---
