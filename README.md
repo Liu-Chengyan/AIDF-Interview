@@ -54,8 +54,8 @@ To view the detailed implementations:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/Liu-Chengyan/AIDF-Interview.git
+cd AIDF-Interview
 ```
 
 2. Create a virtual environment (optional but recommended):
