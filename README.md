@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project aims to scrape the latest earnings-related news about Apple (AAPL), Microsoft (MSFT), and Google (Alphabet Inc., GOOGL) from the Wall Street Journal (WSJ), and store the results in a structured format for further processing.
+This project aims to scrape the latest earnings-related news about Apple (AAPL), Microsoft (MSFT) and Google (GOOGL) from the Wall Street Journal (WSJ), and store the results in a structured format for further processing.
 
 ---
 
@@ -86,5 +86,32 @@ Example:
     "summary": "Microsoft's Azure cloud revenue increases by 28% year-over-year."
   }
 ]
+```
+| Field    | Description |
+|:---------|:------------|
+| company  | Company ticker symbol (e.g., AAPL, MSFT, GOOGL) |
+| title    | News headline |
+| date     | News publication date (format: YYYY-MM-DD) |
+| summary  | Short summary of the article |
 
 ---
+
+## reCAPTCHA Strategy
+
+No explicit reCAPTCHA challenges were encountered during the WSJ news scraping process.  
+This project utilizes a cURL-based request construction approach with browser fingerprinting and manual cookie management to bypass basic anti-bot detections.
+
+If actual reCAPTCHA protection is encountered, the following strategies can be considered:
+- Simulating real user behavior using Selenium browser automation.
+- Using third-party CAPTCHA-solving services (e.g., 2captcha, AntiCaptcha).
+- Rotating proxy IPs combined with request throttling.
+- Employing stealth plugins for headless browsers (e.g., puppeteer-extra-plugin-stealth).
+
+---
+
+## Files and Directory Structure
+
+
+- `wsj.py` scrapes the earnings news articles from WSJ.
+- Each company folder stores individual keyword-based JSON files.
+- `company.json` aggregates all articles into a single file.
