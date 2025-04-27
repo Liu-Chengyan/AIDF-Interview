@@ -1,0 +1,35 @@
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+data = pd.read_json('company.json')
+
+# Filter data for the selected company and date range
+def filter_data(company, start_date, end_date):
+    filtered_data = data[(data['company'] == company) & (data['date'] >= start_date) & (data['date'] <= end_date)]
+    return filtered_data
+
+# Create a Streamlit app
+st.title('News Articles Visualization')
+
+# Sidebar with company selector and date range
+company = st.sidebar.selectbox('Select Company', data['company'].unique())
+start_date = '2025-04-01'
+end_date = '2025-04-25'
+
+# Filter data based on selection
+filtered_data = filter_data(company, start_date, end_date)
+
+# Prepare data for line chart
+daily_count = filtered_data.groupby('date').size().reset_index(name='count')
+
+# Create line chart
+plt.figure(figsize=(12,6))
+sns.lineplot(data=daily_count, x='date', y='count', marker='o')
+plt.title(f'Number of News Articles per Day for {company}')
+plt.xlabel('Date')
+plt.ylabel('Number of News Articles')
+plt.xticks(rotation=45)
+st.pyplot(plt)
