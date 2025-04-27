@@ -16,7 +16,7 @@
 - **Generation and Results**:
   - The generated Python code was executed directly within the notebook, successfully producing a histogram showing the distribution of news articles among Apple, Microsoft, and Google.
   - The chart clearly illustrates the relative number of earnings-related articles for each company.
-
+![Histogram](histogram_per_company.png)
 ---
 
 ## 3. Second Visualization - Streamlit Dashboard
