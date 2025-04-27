@@ -19,10 +19,15 @@ This project aims to scrape the latest earnings-related news about Apple (AAPL),
 ## Methodology
 
 - Manually construct request headers and cookies to simulate real browser visits and bypass basic anti-crawling detections: Capture a real cURL request from WSJ and manually rewrite it into a Python `requests` format.
+  
 - Use the `requests` library to send HTTP requests, including necessary headers and cookies.
-- Parse the HTML page with `BeautifulSoup` to extract the hidden `<script>` tag (id=`__NEXT_DATA__`): Use `BeautifulSoup` to locate the hidden `<script id="__NEXT_DATA__">` tag, extract the standard JSON data, and parse it into a Python object using `json.loads`, making it easier to retrieve useful information such as headlines, timestamps, and summaries..
+  
+- Parse the HTML page with `BeautifulSoup` to extract the hidden `<script>` tag (id=`__NEXT_DATA__`): Use `BeautifulSoup` to locate the hidden `<script id="__NEXT_DATA__">` tag, extract the standard JSON data, and parse it into a Python object using `json.loads`, making it easier to retrieve useful information such as headlines, timestamps, and summaries.
+  
 - Parse the embedded JSON data to extract article information such as headline, timestamp, and summary.
+  
 - Handle pagination by looping through multiple pages until no more search results are available.
+  
 - Store structured data in a list (which can later be exported to JSON or CSV files).
 
 
