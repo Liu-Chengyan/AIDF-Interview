@@ -14,3 +14,10 @@
   - Imports the pipeline function from `pipeline.py`.
   - Schedules the pipeline to run automatically every 6 hours using the `schedule` library.
   - Runs an infinite loop to keep checking and executing the scheduled task.
+
+---
+# Screenshots of successful run
+
+![1](Graphs/part2_prove_1.png)
+
+![2](Graphs/part2_prove_2.png)
