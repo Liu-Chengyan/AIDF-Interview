@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains the solutions for the LLM Data Engineering internship task, covering web scraping, simple data pipeline automation and LLM-driven visualizations and summarizations.
+This repository contains the solutions for the LLM Data Engineering internship task, covering web scraping, simple data pipeline automation and LLM-driven visualizations & summarizations.
 
 The work is divided into four parts, each implemented in a separate Git branch.
 
