@@ -1,4 +1,4 @@
-# Financial News Scraper from WSJ
+# Part 1: Financial News Scraper from WSJ
 
 ## Project Overview
 
