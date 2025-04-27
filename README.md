@@ -44,7 +44,6 @@ This project aims to scrape the latest earnings-related news about Apple (AAPL),
 | AAPL | ipad | Tablet product line |
 | AAPL | ios | Mobile operating system |
 | AAPL | apple inc | Full company name |
-| AAPL | apple earnings | Earnings-related news |
 | AAPL | apple revenue | Revenue-related news |
 | AAPL | tim cook | CEO of Apple |
 | MSFT | microsoft | Company name |
